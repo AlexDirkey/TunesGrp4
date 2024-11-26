@@ -1,16 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.VBox?>
-
 <?import javafx.scene.control.Button?>
-<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
-      fx:controller="com.example.tunesgrp4.HelloController">
-    <padding>
-        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
-    </padding>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
 
-    <Label fx:id="welcomeText"/>
-    <Button text="Hello!" onAction="#onHelloButtonClick"/>
-</VBox>
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="622.0" prefWidth="791.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Text layoutX="582.0" layoutY="46.0" scaleX="1.6" scaleY="1.6" strokeType="OUTSIDE" strokeWidth="0.0" text="Search:" wrappingWidth="46.23307228088379" />
+      <Button fx:id="BackBtn" layoutX="29.0" layoutY="43.0" mnemonicParsing="false" text="&lt;" />
+      <Button fx:id="StartStopBtn" layoutX="88.0" layoutY="43.0" mnemonicParsing="false" text="Start/Stop" />
+      <Button fx:id="ForwardBtn" layoutX="174.0" layoutY="43.0" mnemonicParsing="false" text="&gt;" />
+      <TableView layoutX="14.0" layoutY="337.0" prefHeight="244.0" prefWidth="300.0">
+        <columns>
+          <TableColumn fx:id="PlayList" minWidth="5.0" prefWidth="70.0" text="PlayLists" />
+          <TableColumn fx:id="SongsOnPlayList" prefWidth="116.0" text="Songs On Playlist" />
+            <TableColumn fx:id="TotalPlayTime" prefWidth="113.0" text="Total Play Time" />
+        </columns>
+      </TableView>
+      <TableView layoutX="370.0" layoutY="337.0" prefHeight="244.0" prefWidth="397.0">
+        <columns>
+          <TableColumn fx:id="Title" prefWidth="85.0" text="Title" />
+          <TableColumn fx:id="Artist" prefWidth="101.0" text="Artist" />
+            <TableColumn fx:id="Category" prefWidth="108.0" text="Category" />
+            <TableColumn fx:id="Time" prefWidth="101.0" text="Time" />
+        </columns>
+      </TableView>
+      <TextField fx:id="NowPlaying" layoutX="333.0" layoutY="89.0" prefHeight="30.0" prefWidth="142.0" promptText="(None)..... is playing" />
+      <Button layoutX="314.0" layoutY="348.0" minWidth="0.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="0.0" text="&lt;&lt;&lt;" />
+      <ProgressBar layoutX="29.0" layoutY="84.0" prefHeight="20.0" prefWidth="201.0" progress="0.0" />
+      <Button layoutX="22.0" layoutY="581.0" mnemonicParsing="false" text="New" />
+      <Button layoutX="83.0" layoutY="581.0" mnemonicParsing="false" text="Edit" />
+      <Button layoutX="147.0" layoutY="581.0" mnemonicParsing="false" text="Delete" />
+      <Button layoutX="211.0" layoutY="581.0" mnemonicParsing="false" />
+      <Button layoutX="279.0" layoutY="581.0" mnemonicParsing="false" text="Button" />
+      <Button layoutX="343.0" layoutY="581.0" mnemonicParsing="false" text="Button" />
+   </children>
+</AnchorPane>

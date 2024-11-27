@@ -4,6 +4,8 @@ import com.microsoft.sqlserver.jdbc.SQLServerDataSource;
 import com.microsoft.sqlserver.jdbc.SQLServerException;
 
 import java.sql.Connection;
+import java.sql.SQLException;
+import java.util.Arrays;
 
 public class MyDatabaseConnector {
 
@@ -20,5 +22,20 @@ public class MyDatabaseConnector {
 
     public Connection getConnection() throws SQLServerException {
         return dataSource.getConnection();
+    }
+
+    public static void main(String[] args) throws SQLServerException {
+
+        MyDatabaseConnector databaseConnector = new MyDatabaseConnector();
+        try (Connection connection = databaseConnector.getConnection()) {
+
+
+            System.out.println("is it clooosed?" + !connection.isClosed());
+            connection.close();
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
     }
 }

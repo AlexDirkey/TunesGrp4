@@ -13,8 +13,8 @@ public class MyDatabaseConnector {
 
     public MyDatabaseConnector() {
         dataSource = new SQLServerDataSource();
-        dataSource.setServerName("10.176.111.31");
-        dataSource.setDatabaseName("Tunesgrp4");
+        dataSource.setServerName("10.176.111.34");
+        dataSource.setDatabaseName("Grp4Tunes");
         dataSource.setUser("CSe2024a_e_0");
         dataSource.setPassword("CSe2024aE0!24");
         dataSource.setPortNumber(1433);
@@ -30,7 +30,7 @@ public class MyDatabaseConnector {
         try (Connection connection = databaseConnector.getConnection()) {
 
 
-            System.out.println("is it clooosed?" + !connection.isClosed());
+            System.out.println("is it closed?" + !connection.isClosed());
             connection.close();
 
         } catch (SQLException e) {

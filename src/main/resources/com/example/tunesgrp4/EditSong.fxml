@@ -35,11 +35,11 @@
             <Font size="18.0" />
          </font>
       </Text>
-      <TextField fx:id="sTblTitleBar" layoutX="100.0" layoutY="60.0" prefHeight="25.0" prefWidth="255.0" />
-      <TextField fx:id="sTblArtistBar" layoutX="100.0" layoutY="96.0" prefHeight="25.0" prefWidth="255.0" />
-      <TextField fx:id="sTblTimeBar" layoutX="100.0" layoutY="168.0" prefHeight="25.0" prefWidth="96.0" />
-      <TextField fx:id="sTblFileBar" layoutX="100.0" layoutY="212.0" prefHeight="25.0" prefWidth="255.0" />
-      <MenuButton fx:id="sTblCategoryMenu" layoutX="100.0" layoutY="129.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="96.0" text="Pop">
+      <TextField fx:id="sTblTitleBar" layoutX="106.0" layoutY="59.0" prefHeight="25.0" prefWidth="255.0" />
+      <TextField fx:id="sTblArtistBar" layoutX="106.0" layoutY="96.0" prefHeight="25.0" prefWidth="255.0" />
+      <TextField fx:id="sTblTimeBar" layoutX="106.0" layoutY="167.0" prefHeight="25.0" prefWidth="96.0" />
+      <TextField fx:id="sTblFileBar" layoutX="106.0" layoutY="212.0" prefHeight="25.0" prefWidth="255.0" />
+      <MenuButton fx:id="sTblCategoryMenu" layoutX="106.0" layoutY="129.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="96.0" text="Pop">
         <items>
           <MenuItem mnemonicParsing="false" text="Action 1" />
           <MenuItem mnemonicParsing="false" text="Action 2" />
@@ -52,7 +52,7 @@
       </Text>
       <Button fx:id="sTblCancleBtn" layoutX="398.0" layoutY="253.0" mnemonicParsing="false" text="Cancel" />
       <Button fx:id="sTblSaveBtn" layoutX="345.0" layoutY="253.0" mnemonicParsing="false" text="Save" />
-      <Button fx:id="sTblCategoryBtn" layoutX="209.0" layoutY="129.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="58.0" text="More..." />
-      <Button fx:id="sTblChooseBtn" layoutX="366.0" layoutY="212.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="76.0" text="Choose..." />
+      <Button fx:id="sTblCategoryBtn" layoutX="218.0" layoutY="129.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="58.0" text="More..." />
+      <Button fx:id="sTblChooseBtn" layoutX="374.0" layoutY="212.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="76.0" text="Choose..." />
    </children>
 </AnchorPane>

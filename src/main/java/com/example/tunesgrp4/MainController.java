@@ -1,12 +1,10 @@
 package com.example.tunesgrp4;
-import com.microsoft.sqlserver.jdbc.SQLServerDataSource;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 //package dal.db; Tilføjet i videoen, men fungerer ikke? hmmmmm
-import com.microsoft.sqlserver.jdbc.SQLServerDriver; //Driver, der gør, vi kan tilgå databasen
+//Must handle what happens in the GUI when a button is clicked. Must also be able to recive data and modify them.
 
-
-public class HelloController {
+public class MainController {
     @FXML
     private Label welcomeText;
 

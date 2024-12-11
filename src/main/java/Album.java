@@ -1,14 +1,15 @@
 public class Album
 //must contain Album info. Needs getters and setters.
 {
-private int id;
-private String name;
-private String author;
-private int year;
-private String genre;
-private String playlist;
+private int id; // id fof the album
+private String name; //Title of the album
+private String Artist; //Name of the artist/artists
+private int year; // album release year
+private String genre; // album genre
+private String playlist; // Sets the playlist
 
-    public Album(int id, String name, String author, int year, String genre, String playlist) {
+    //Getters and setters - gets album-info from our Database
+    public Album(int id, String name, String Artist, int year, String genre, String playlist) {
     }
     public int getId() {
         return id;
@@ -22,11 +23,11 @@ private String playlist;
     public void setName(String name) {
         this.name = name;
     }
-    public String getAuthor() {
-        return author;
+    public String getArtist() {
+        return Artist;
     }
-    public void setAuthor(String author) {
-        this.author = author;
+    public void setArtist(String artist) {
+        this.Artist = artist;
     }
     public int getYear() {
         return year;

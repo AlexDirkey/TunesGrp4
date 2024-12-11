@@ -1,4 +1,3 @@
-package com.Tunes.Grp4;
 public class Artist
 //Must contain artist info. Needs getters and setters.
 {
@@ -9,7 +8,7 @@ private Album album; //Name of the album - returns null, if the song isnt on any
     public Artist(int id, String name, Album album) {// Constructor for the artist class
         this.id = id;
         this.name = name;
-        this.album = album;
+        this.album = null;
     }
 
     //Getters and setters - gets info from the database and connects it to the GUI

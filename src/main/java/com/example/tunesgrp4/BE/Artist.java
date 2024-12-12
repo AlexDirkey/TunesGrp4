@@ -33,4 +33,13 @@ private Album album; //Name of the album - returns null, if the song isnt on any
         this.album = album;
     }
 
+    @Override //We contactinate numbers to String
+    public String toString() {
+        return "Artist{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", album=" + (album != null ? album.getName() : "No album") +
+                '}';
+    }
+
 }

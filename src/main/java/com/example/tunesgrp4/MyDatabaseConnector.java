@@ -5,11 +5,10 @@ import com.microsoft.sqlserver.jdbc.SQLServerException;
 
 import java.sql.Connection;
 import java.sql.SQLException;
-import java.util.Arrays;
 
 public class MyDatabaseConnector {
 
-    private SQLServerDataSource dataSource;
+    private static SQLServerDataSource dataSource;
 
     public MyDatabaseConnector() {
         dataSource = new SQLServerDataSource();
@@ -18,9 +17,11 @@ public class MyDatabaseConnector {
         dataSource.setUser("CSe2024a_e_0");
         dataSource.setPassword("CSe2024aE0!24");
         dataSource.setPortNumber(1433);
+        dataSource.setEncrypt("true");
+        dataSource.getTrustServerCertificate();
     }
 
-    public Connection getConnection() throws SQLServerException {
+    public static Connection getConnection() throws SQLServerException {
         return dataSource.getConnection();
     }
 

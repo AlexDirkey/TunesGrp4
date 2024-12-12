@@ -15,7 +15,7 @@
             <Font size="18.0" />
          </font>
       </Text>
-      <Text fx:id="sTblArtistTxt" layoutX="54.0" layoutY="116.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Artist:">
+      <Text fx:id="sTblArtistTxt" layoutX="54.0" layoutY="116.0" strokeType="OUTSIDE" strokeWidth="0.0" text="com.example.tunesgrp4.BE.Artist:">
          <font>
             <Font size="18.0" />
          </font>
@@ -45,7 +45,7 @@
           <MenuItem mnemonicParsing="false" text="Action 2" />
         </items>
       </MenuButton>
-      <Text fx:id="tblTitle" layoutX="174.0" layoutY="21.0" strokeType="OUTSIDE" strokeWidth="0.0" text="New/Edit Song">
+      <Text fx:id="tblTitle" layoutX="174.0" layoutY="21.0" strokeType="OUTSIDE" strokeWidth="0.0" text="New/Edit com.example.tunesgrp4.BE.Song">
          <font>
             <Font size="18.0" />
          </font>

@@ -1,5 +1,7 @@
+package com.example.tunesgrp4.BE;
+
 public class Album
-//must contain Album info. Needs getters and setters.
+//must contain com.example.tunesgrp4.BE.Album info. Needs getters and setters.
 {
 private int id; // id fof the album
 private String name; //Title of the album

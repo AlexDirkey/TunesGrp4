@@ -1,3 +1,5 @@
+package com.example.tunesgrp4.BE;
+
 public class Song // public, så det kan tale sammen med main-metoden
 //Must contain song info. Needs getters and setters.
 
@@ -12,7 +14,7 @@ public class Song // public, så det kan tale sammen med main-metoden
 
     public Song() {} // Constructer - allows creation of a song.
 
-    public Song(int id, String title, String genre, String duration, Album album, Artist artist) // Song-parameter
+    public Song(int id, String title, String genre, String duration, Album album, Artist artist) // com.example.tunesgrp4.BE.Song-parameter
 
     {
     this.id = id; //Sets a song's id

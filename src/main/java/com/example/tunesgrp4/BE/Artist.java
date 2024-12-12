@@ -1,3 +1,5 @@
+package com.example.tunesgrp4.BE;
+
 public class Artist
 //Must contain artist info. Needs getters and setters.
 {

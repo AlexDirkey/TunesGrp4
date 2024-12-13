@@ -1,9 +1,15 @@
-package com.example.tunesgrp4;
+package com.example.tunesgrp4.gui;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
 
 public class NewEditPlayList {
+
+    @FXML
+    public void handleSave(ActionEvent event) {
+        System.out.println("Save button clicked!");
+    }
 
     @FXML
     private TextField playlistNameField; //Playlist name field

@@ -9,13 +9,13 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.tunesgrp4.MainController">
+<AnchorPane maxHeight="1000" maxWidth="1000" minHeight="1000" minWidth="1000" prefHeight="1000" prefWidth="1000" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.tunesgrp4.gui.MainController">
     <children>
         <Text fx:id="filterTxt" layoutX="618.0" layoutY="45.0" scaleX="1.6" scaleY="1.6" strokeType="OUTSIDE" strokeWidth="0.0" text="Filter:" wrappingWidth="46.23307228088379" />
         <Button fx:id="backBtn" layoutX="29.0" layoutY="43.0" mnemonicParsing="false" text="&lt;" />
         <Button fx:id="playBtn" layoutX="67.0" layoutY="43.0" mnemonicParsing="false" text="Start/Stop" />
-        <Button fx:id="forwardBtn" layoutX="154.0" layoutY="43.0" minWidth="49.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="49.0" text="&gt;" />
-        <TableView layoutX="14.0" layoutY="251.0" prefHeight="330.0" prefWidth="178.0">
+        <Button fx:id="forwardBtn" layoutX="154.0" layoutY="43.0" minWidth="25.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" text="&gt;" />
+        <TableView fx:id="pListTable" layoutX="14.0" layoutY="251.0" prefHeight="330.0" prefWidth="178.0">
             <columns>
                 <TableColumn fx:id="pListNameCol" minWidth="5.0" prefWidth="77.0" text="Name" />
                 <TableColumn fx:id="pListSongCol" prefWidth="51.0" text="Songs" />
@@ -33,7 +33,7 @@
         <Button layoutX="314.0" layoutY="348.0" minWidth="0.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="0.0" text="&lt;&lt;&lt;" />
         <Button fx:id="pListNewBtn" layoutX="22.0" layoutY="581.0" mnemonicParsing="false" onAction="#openNEpList" text="New" />
         <Button fx:id="pListEditBtn" layoutX="85.0" layoutY="581.0" mnemonicParsing="false" onAction="#openNEpList" text="Edit" />
-        <Button fx:id="pListDelBtn" layoutX="141.0" layoutY="581.0" mnemonicParsing="false" text="Delete" />
+        <Button fx:id="pListDelBtn" layoutX="141.0" layoutY="581.0" mnemonicParsing="false" onAction="#DeletepList" text="Delete" />
         <Button fx:id="songsNewBtn" layoutX="455.0" layoutY="581.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="63.0" text="New..." />
         <Button fx:id="onListUpBtn" layoutX="215.0" layoutY="581.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="54.0" text="Up Arrow" />
         <Button fx:id="onListDownBtn" layoutX="264.0" layoutY="581.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="54.0" text="Down Arrow" />

@@ -1,4 +1,4 @@
-package com.example.tunesgrp4;
+package com.example.tunesgrp4.dal;
 
 import com.microsoft.sqlserver.jdbc.SQLServerDataSource;
 import com.microsoft.sqlserver.jdbc.SQLServerException;

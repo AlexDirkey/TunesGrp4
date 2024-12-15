@@ -67,7 +67,7 @@ public class MainController {
 
     }
     @FXML
-    public void DeletepList(ActionEvent Event) {
+    public void DeleteList(ActionEvent Event) {
         //Checks if a playlist is selected in the table
         Playlist selectedPlaylist = pListTable.getSelectionModel().getSelectedItem();
         if (selectedPlaylist == null) {

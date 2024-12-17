@@ -11,21 +11,25 @@ public class Song // public, så det kan tale sammen med main-metoden
     private String duration;
     private Album album;
     private Artist artist;
+    private String fileUrl;
 
     public Song() {} // Constructer - allows creation of a song.
 
-    public Song(int id, String title, String genre, String duration, Album album, Artist artist) // com.example.tunesgrp4.BE.Song-parameter
-
+    public Song(int id, String title, String genre, String duration, Album album, Artist artist, String fileUrl) // com.example.tunesgrp4.BE.Song-parameter
+// skal fodres med de rigtige parametre - id
     {
     this.id = id; //Sets a song's id
     this.title = title; //Sets the songs title
     this.genre = genre; //Sets the songs genre
     this.duration = duration; //Sets the duration of the song
-
+    this.fileUrl = fileUrl; //Locates the mp3-file
 
 }
 
-//Getters and setters - Gets info, id, artist, etc, from our database. They are 'public', as to "talk" with our other classes
+    public Song(int id, String title, String album, int duration) {
+    }
+
+    //Getters and setters - Gets info, id, artist, etc, from our database. They are 'public', as to "talk" with our other classes
 public int getId()
 {return id;}
 
@@ -63,5 +67,9 @@ public Artist getArtist() {
 
 public void setArtist(Artist artist)
 { this.artist = artist;}
+
+public String getFileUrl() {
+        return fileUrl;
+}
 }
 

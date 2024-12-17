@@ -1,6 +1,8 @@
 package com.example.tunesgrp4.gui;
 
+import com.example.tunesgrp4.BE.Song;
 import com.example.tunesgrp4.bll.Playlist;
+import com.example.tunesgrp4.dal.MyDatabaseConnector;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.event.ActionEvent;
@@ -17,11 +19,13 @@ import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.SimpleIntegerProperty;
 
 import java.io.IOException;
+import java.util.List;
 
 //package dal.db; Tilføjet i videoen, men fungerer ikke? hmmmmm
 //Must handle what happens in the GUI when a button is clicked. Must also be able to recive data and modify them.
 
-public class MainController {
+
+public class SongController {
 
     @FXML
     private TableView<Playlist> pListTable;
@@ -47,6 +51,8 @@ public class MainController {
     @FXML
     protected void onHelloButtonClick() {
         welcomeText.setText("Welcome to Grp4's Itunes Project");
+        private ObservableList<Song> songList;
+
     }
 
     @FXML
@@ -67,7 +73,7 @@ public class MainController {
 
     }
     @FXML
-    public void DeleteList(ActionEvent Event) {
+    public void DeletepList(ActionEvent Event) {
         //Checks if a playlist is selected in the table
         Playlist selectedPlaylist = pListTable.getSelectionModel().getSelectedItem();
         if (selectedPlaylist == null) {
@@ -108,6 +114,13 @@ public class MainController {
         catch (IOException e) {
             e.printStackTrace(); //Writes Error to console incase anything is wrong
 
+
+            MyDatabaseConnector databaseConnector = new MyDatabaseConnector();
+            List<Song> songs = databaseConnector.getAllSongs();
+
+            songList = FXCollections.observableArrayList(songs);
+
+            songTable.setItems(songList);
         }
     }
 }

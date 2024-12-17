@@ -55,6 +55,10 @@ public class SongController {
 
     }
 
+    public void addPlaylistToTable(Playlist playlist) {
+        pListTable.getItems().add(playlist);
+    }
+
     @FXML
     public void initialize() {
         //Links coulumns to Playlist attributes
@@ -94,7 +98,7 @@ public class SongController {
             Parent root = fxmlLoader.load();
 
             NewEditPlayList controller = fxmlLoader.getController();
-
+            controller.setMainController(this);
             //Creates a new Window for the GUI
             Stage stage = new Stage();
 
@@ -105,9 +109,14 @@ public class SongController {
             }
             else if (event.getSource() == pListEditBtn) {
                 stage.setTitle("Edit Playlist");
-                controller.initializeForEditPlaylist();
+                Playlist selectedPlaylist = pListTable.getSelectionModel().getSelectedItem();
+                if (selectedPlaylist != null) {
+                controller.initializeForEditPlaylist(selectedPlaylist); //Pass the playlist to edit
+            } else {
+                    System.out.println("No playlist selected to edit!");
+                    return;
             }
-
+            }
             stage.setScene(new Scene(root));
             stage.show();
         }
@@ -122,5 +131,10 @@ public class SongController {
 
             songTable.setItems(songList);
         }
-    }
+
+        }
+        // Updates table
+        public void refreshPlaylistTable() {
+            pListTable.refresh();
+        }
 }

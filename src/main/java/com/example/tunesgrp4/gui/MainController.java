@@ -49,6 +49,10 @@ public class MainController {
         welcomeText.setText("Welcome to Grp4's Itunes Project");
     }
 
+    public void addPlaylistToTable(Playlist playlist) {
+        pListTable.getItems().add(playlist);
+    }
+
     @FXML
     public void initialize() {
         //Links coulumns to Playlist attributes
@@ -67,7 +71,7 @@ public class MainController {
 
     }
     @FXML
-    public void DeleteList(ActionEvent Event) {
+    public void DeletepList(ActionEvent Event) {
         //Checks if a playlist is selected in the table
         Playlist selectedPlaylist = pListTable.getSelectionModel().getSelectedItem();
         if (selectedPlaylist == null) {
@@ -88,7 +92,7 @@ public class MainController {
             Parent root = fxmlLoader.load();
 
             NewEditPlayList controller = fxmlLoader.getController();
-
+            controller.setMainController(this);
             //Creates a new Window for the GUI
             Stage stage = new Stage();
 
@@ -99,9 +103,14 @@ public class MainController {
             }
             else if (event.getSource() == pListEditBtn) {
                 stage.setTitle("Edit Playlist");
-                controller.initializeForEditPlaylist();
+                Playlist selectedPlaylist = pListTable.getSelectionModel().getSelectedItem();
+                if (selectedPlaylist != null) {
+                controller.initializeForEditPlaylist(selectedPlaylist); //Pass the playlist to edit
+            } else {
+                    System.out.println("No playlist selected to edit!");
+                    return;
             }
-
+            }
             stage.setScene(new Scene(root));
             stage.show();
         }
@@ -109,5 +118,10 @@ public class MainController {
             e.printStackTrace(); //Writes Error to console incase anything is wrong
 
         }
-    }
+
+        }
+        // Updates table
+        public void refreshPlaylistTable() {
+            pListTable.refresh();
+        }
 }

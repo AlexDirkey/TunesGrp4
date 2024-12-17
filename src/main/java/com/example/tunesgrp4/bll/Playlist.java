@@ -12,6 +12,7 @@ public class Playlist {
         this.totalTime = totalTime;
     }
 
+    // Getters
     public String getName() {
         return name;
     }
@@ -23,4 +24,9 @@ public class Playlist {
     public String getTotalTime() {
         return totalTime;
     }
+    // Setter for name
+    public void setName(String name) {
+        this.name = name;
+    }
+
 }

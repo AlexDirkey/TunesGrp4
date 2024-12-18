@@ -96,6 +96,7 @@ public class SongController {
 
             NewEditPlayList controller = fxmlLoader.getController();
             controller.MainApplication(this);
+            controller.setSongController(this);
             //Creates a new Window for the GUI
             Stage stage = new Stage();
 

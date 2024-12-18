@@ -1,22 +1,19 @@
 package com.example.tunesgrp4.gui;
 
-import com.example.tunesgrp4.MainApplication;
 import com.example.tunesgrp4.bll.Playlist;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
-import java.sql.SQLOutput;
-
 
 public class NewEditPlayList {
 
-    private MainApplication mainController;
+    private SongController songController;
     private Playlist playlistToEdit; // Holds the playlist being edited.
 
-    public void setMainController(MainApplication mainController) {
-        this.mainController = mainController;
+    public void setSongController(SongController songController) {
+        this.songController = songController;
 }
 
     @FXML
@@ -42,11 +39,11 @@ public class NewEditPlayList {
             // if editing, update the existing playlist(Instead of creating a new one)
             playlistToEdit.setName(playlistName);
             System.out.println("Updated playlist: " + playlistName);
-            mainController.refreshPlaylistTable(); // updates table to show the changes
+            songController.refreshPlaylistTable(); // updates table to show the changes
         } else {
             // if creating new playlist, adds a new one rather than replacing
             Playlist newPlaylist = new Playlist(playlistName, 0, "0:00");
-            mainController.addPlaylistToTable(newPlaylist);
+            songController.addPlaylistToTable(newPlaylist);
             System.out.println("Crated new playlist: " + playlistName);
         }
 

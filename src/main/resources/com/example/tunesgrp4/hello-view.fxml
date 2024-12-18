@@ -28,7 +28,7 @@
     <TableView fx:id="songTable" layoutX="455.0" layoutY="251.0" prefHeight="330.0" prefWidth="358.0">
         <columns>
             <TableColumn fx:id="titleCol" prefWidth="85.0" text="Title"/>
-            <TableColumn fx:id="artistCol" prefWidth="83.0" text="com.example.tunesgrp4.BE.Artist"/>
+            <TableColumn fx:id="artistCol" prefWidth="83.0" text="Artist"/>
             <TableColumn fx:id="categoryCol" prefWidth="95.0" text="Category"/>
             <TableColumn fx:id="timeCol" prefWidth="96.0" text="Time"/>
         </columns>
@@ -42,7 +42,7 @@
     <Button fx:id="pListDelBtn" layoutX="141.0" layoutY="581.0" mnemonicParsing="false" onAction="#DeletepList"
             text="Delete"/>
     <Button fx:id="songsNewBtn" layoutX="455.0" layoutY="581.0" mnemonicParsing="false" prefHeight="30.0"
-            prefWidth="63.0" text="New..."/>
+            prefWidth="63.0" text="New..." onAction="#handleNewSong"/>
     <Button fx:id="onListUpBtn" layoutX="215.0" layoutY="581.0" mnemonicParsing="false" prefHeight="30.0"
             prefWidth="54.0" text="Up Arrow"/>
     <Button fx:id="onListDownBtn" layoutX="264.0" layoutY="581.0" mnemonicParsing="false" prefHeight="30.0"

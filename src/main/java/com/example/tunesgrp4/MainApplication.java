@@ -18,8 +18,8 @@ public class MainApplication extends Application {
         stage.setScene(scene);
         stage.show();
 
-        //MainApplication application = (MainApplication) fxmlLoader.getController();
-       // application.loadSongsFromDatabase;
+
+
     }
 
     public static void main(String[] args) {

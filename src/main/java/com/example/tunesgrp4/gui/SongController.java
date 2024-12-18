@@ -29,17 +29,18 @@ import java.util.List;
 
 public class SongController {
 
+
     @FXML
     private TableView<Song> songTable;
 
     @FXML
-    private TableColumn<Song, String> titleColumn;
+    private TableColumn<Song, String> titleCol;
 
     @FXML
-    private TableColumn<Song, String> artistColumn;
+    private TableColumn<Song, String> artistCol;
 
     @FXML
-    private TableColumn<Song, String> albumColumn;
+    private TableColumn<Song, String> albumCol;
 
     @FXML
     private TableColumn<Song, String> genreColumn;
@@ -87,10 +88,10 @@ public class SongController {
     @FXML
     public void initialize() {
 
-        titleColumn.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getTitle()));
-        artistColumn.setCellValueFactory(cellData -> new SimpleStringProperty()); // why not?
-        genreColumn.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getGenre()));
-        durationColumn.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getDuration()));
+        titleCol.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getTitle()));
+        artistCol.setCellValueFactory(cellData -> new SimpleStringProperty()); // why not?
+        //genreColumn.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getGenre()));
+        //durationColumn.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getDuration()));
         //Links coulumns to Playlist attributes
         pListNameCol.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getName()));
         pListSongCol.setCellValueFactory(cellData -> new SimpleIntegerProperty(cellData.getValue().getSongCount()).asObject());

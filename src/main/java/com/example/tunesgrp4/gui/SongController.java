@@ -9,12 +9,17 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.SimpleIntegerProperty;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 
+
+import java.io.File;
 import java.io.IOException;
 import java.util.List;
 
@@ -23,6 +28,29 @@ import java.util.List;
 
 
 public class SongController {
+
+    @FXML
+    private TableView<Song> songTable;
+
+    @FXML
+    private TableColumn<Song, String> titleColumn;
+
+    @FXML
+    private TableColumn<Song, String> artistColumn;
+
+    @FXML
+    private TableColumn<Song, String> albumColumn;
+
+    @FXML
+    private TableColumn<Song, String> genreColumn;
+
+    @FXML
+    private TableColumn<Song, String> durationColumn;
+
+    @FXML
+    private Button newSongButton;
+
+    private ObservableList<Song> songList = FXCollections.observableArrayList();
 
     @FXML
     private TableView<Playlist> pListTable;
@@ -58,10 +86,18 @@ public class SongController {
 
     @FXML
     public void initialize() {
+
+        titleColumn.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getTitle()));
+        artistColumn.setCellValueFactory(cellData -> new SimpleStringProperty()); // why not?
+        genreColumn.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getGenre()));
+        durationColumn.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getDuration()));
         //Links coulumns to Playlist attributes
         pListNameCol.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getName()));
         pListSongCol.setCellValueFactory(cellData -> new SimpleIntegerProperty(cellData.getValue().getSongCount()).asObject());
         pListTimeCol.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getTotalTime()));
+
+        songTable.setItems(songList);
+
 
         //Placeholder data for testing and understanding
         ObservableList<Playlist> playlists = FXCollections.observableArrayList
@@ -72,6 +108,39 @@ public class SongController {
                 );
         pListTable.setItems(playlists);
 
+    }
+
+    @FXML
+    public void handleNewSong(ActionEvent event) {
+
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("MP3 Files", "*.mp3"));
+
+        File selectedFile = fileChooser.showOpenDialog(new Stage());
+
+        if (selectedFile != null) {
+
+            String filePath = selectedFile.getAbsolutePath();
+            String songTitle = selectedFile.getName();
+            String songArtist = "Unknown";
+            String songAlbum = "Unknown";
+            String songGenre = "Unknown";
+            String songDuration = "Unknown";
+
+
+            Song newSong = new Song(songTitle, songArtist, songGenre, songDuration, filePath);
+
+
+            songList.add(newSong);
+        }
+        else {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error");
+            alert.setHeaderText(null);
+            alert.setContentText("Please select a file");
+            alert.showAndWait();
+
+        }
     }
     @FXML
     public void DeletepList(ActionEvent Event) {

@@ -13,7 +13,7 @@ public class Song // public, så det kan tale sammen med main-metoden
     private Artist artist;
     private String fileUrl;
 
-    public Song() {} // Constructer - allows creation of a song.
+    public Song(String songTitle, String songArtist, String songGenre, String songDuration, String filePath) {} // Constructer - allows creation of a song.
 
     public Song(int id, String title, String genre, String duration, Album album, Artist artist, String fileUrl) // com.example.tunesgrp4.BE.Song-parameter
 // skal fodres med de rigtige parametre - id
@@ -42,7 +42,7 @@ public String getTitle()
 public void setTitle(String Title)
 { this.title = title; }
 
-public String getGenre(String Genre)
+public String getGenre()
 { return genre; }
 
 public void setGenre(String Genre)

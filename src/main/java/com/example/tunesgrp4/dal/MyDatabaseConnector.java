@@ -62,7 +62,7 @@ public class MyDatabaseConnector {
                 int duration = resultSet.getInt("duration");
                 String fileUrl = resultSet.getString("fileUrl");
 
-                songs.add(new Song(id, title, album, duration, fileUrl));//
+                songs.add(new Song());//
 
             }
 

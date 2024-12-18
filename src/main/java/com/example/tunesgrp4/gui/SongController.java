@@ -4,17 +4,14 @@ import com.example.tunesgrp4.BE.Song;
 import com.example.tunesgrp4.bll.Playlist;
 import com.example.tunesgrp4.dal.MyDatabaseConnector;
 import javafx.fxml.FXML;
-import javafx.scene.control.Label;
+import javafx.scene.control.*;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import javafx.scene.control.Button;
-import javafx.scene.control.TableView;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.scene.control.TableColumn;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.SimpleIntegerProperty;
 
@@ -51,7 +48,7 @@ public class SongController {
     @FXML
     protected void onHelloButtonClick() {
         welcomeText.setText("Welcome to Grp4's Itunes Project");
-        private ObservableList<Song> songList;
+        //private ObservableList<Song> songList;
 
     }
 
@@ -98,7 +95,7 @@ public class SongController {
             Parent root = fxmlLoader.load();
 
             NewEditPlayList controller = fxmlLoader.getController();
-            controller.setMainController(this);
+            controller.MainApplication(this);
             //Creates a new Window for the GUI
             Stage stage = new Stage();
 
@@ -127,8 +124,9 @@ public class SongController {
             MyDatabaseConnector databaseConnector = new MyDatabaseConnector();
             List<Song> songs = databaseConnector.getAllSongs();
 
-            songList = FXCollections.observableArrayList(songs);
+            ObservableList<Song> songList = FXCollections.observableArrayList(songs);
 
+            ListView<Song> songTable = new ListView<>();
             songTable.setItems(songList);
         }
 

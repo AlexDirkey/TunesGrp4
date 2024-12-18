@@ -26,7 +26,7 @@ public class Song // public, så det kan tale sammen med main-metoden
 
 }
 
-    public Song(int id, String title, String album, int duration) {
+    public Song(int id, String title, String album, int duration, String fileUrl) {
     }
 
     //Getters and setters - Gets info, id, artist, etc, from our database. They are 'public', as to "talk" with our other classes

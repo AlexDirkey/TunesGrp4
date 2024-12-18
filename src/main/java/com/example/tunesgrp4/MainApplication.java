@@ -1,5 +1,6 @@
 package com.example.tunesgrp4;
 
+import com.example.tunesgrp4.bll.Playlist;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -17,11 +18,17 @@ public class MainApplication extends Application {
         stage.setScene(scene);
         stage.show();
 
-        MainApplication application = (MainApplication) fxmlLoader.getController();
-        application.loadSongsFromDatabase;
+        //MainApplication application = (MainApplication) fxmlLoader.getController();
+       // application.loadSongsFromDatabase;
     }
 
     public static void main(String[] args) {
         launch();
+    }
+
+    public void refreshPlaylistTable() {
+    }
+
+    public void addPlaylistToTable(Playlist newPlaylist) {
     }
 }

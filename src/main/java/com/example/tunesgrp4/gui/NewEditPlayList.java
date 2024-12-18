@@ -1,5 +1,6 @@
 package com.example.tunesgrp4.gui;
 
+import com.example.tunesgrp4.MainApplication;
 import com.example.tunesgrp4.bll.Playlist;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -11,10 +12,10 @@ import java.sql.SQLOutput;
 
 public class NewEditPlayList {
 
-    private MainController mainController;
+    private MainApplication mainController;
     private Playlist playlistToEdit; // Holds the playlist being edited.
 
-    public void setMainController(MainController mainController) {
+    public void setMainController(MainApplication mainController) {
         this.mainController = mainController;
 }
 
@@ -67,4 +68,6 @@ public class NewEditPlayList {
         playlistNameField.setText(playlist.getName()); //Print current playlist  name to data field
     }
 
+    public void MainApplication(SongController songController) {
+    }
 }
